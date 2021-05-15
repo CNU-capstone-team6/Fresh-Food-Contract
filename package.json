@@ -1,0 +1,23 @@
+{
+  "name": "fresh-food-contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CNU-capstone-team6/Fresh-Food-Contract.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CNU-capstone-team6/Fresh-Food-Contract/issues"
+  },
+  "homepage": "https://github.com/CNU-capstone-team6/Fresh-Food-Contract#readme",
+  "dependencies": {
+    "ganache-cli": "^6.12.2",
+    "truffle": "^5.3.6"
+  }
+}
