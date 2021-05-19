@@ -1,9 +1,7 @@
 pragma solidity >= 0.4.0 ;
 pragma experimental ABIEncoderV2;
 
-import "./ownable.sol";
-
-contract Storage is Ownable {
+contract Storage {
     struct Food {
         uint number;
         string name;
