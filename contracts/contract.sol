@@ -1,4 +1,5 @@
 pragma solidity >= 0.4.0 ;
+pragma experimental ABIEncoderV2;
 
 import "./ownable.sol";
 
@@ -13,7 +14,7 @@ contract Storage is Ownable {
 
     mapping (uint => uint) chainLengthCount;
 
-    function addFood(uint _number, string memory _name, string memory _origin) external {
+    function addFood(uint _number, string calldata _name, string calldata _origin) external {
         foods.push(Food(_number, _name, _origin));
         chainLengthCount[_number]++;
     }
