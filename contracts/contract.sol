@@ -13,15 +13,16 @@ contract Storage {
 
     mapping (uint => uint) chainLengthCount;
 
-    function addFood(uint _number, string calldata _name, string calldata _origin) external {
-        if(_number == 0) {
-            foods.push(Food(++number, _name, _origin));
-            chainLengthCount[number]++;
-        }
-        else {
-            foods.push(Food(_number, _name, _origin));
-            chainLengthCount[_number]++;
-        }
+    function addFood(string calldata _name, string calldata _origin) external returns (uint) {
+        foods.push(Food(++number, _name, _origin));
+        chainLengthCount[number]++;
+
+        return number;
+    }
+
+    function modifyFood(uint _number, string calldata _name, string calldata _origin) external {
+        foods.push(Food(_number, _name, _origin));
+        chainLengthCount[_number]++;
     }
 
     function getFood(uint _number) external view returns (Food[] memory) {
