@@ -5,8 +5,9 @@ contract("Storage" , () => {
        const storage = await Storage.deployed() ;
        await storage.addFood(1, "Food", "Korean") ;
        await storage.addFood(1, "Food2", "Korean") ;
+       await storage.addFood(2, "Food3", "Korean") ;
        const result = await storage.getFood(1) ;
-       assert(result[0].name === "Food") ;
        console.log(result);
+       console.log([result[1].name]);
     });
 });
