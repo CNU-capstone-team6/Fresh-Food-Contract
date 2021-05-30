@@ -9,12 +9,19 @@ contract Storage {
     }
 
     Food[] public foods;
+    uint private number;
 
     mapping (uint => uint) chainLengthCount;
 
     function addFood(uint _number, string calldata _name, string calldata _origin) external {
-        foods.push(Food(_number, _name, _origin));
-        chainLengthCount[_number]++;
+        if(_number == 0) {
+            foods.push(Food(++number, _name, _origin));
+            chainLengthCount[number]++;
+        }
+        else {
+            foods.push(Food(_number, _name, _origin));
+            chainLengthCount[_number]++;
+        }
     }
 
     function getFood(uint _number) external view returns (Food[] memory) {
